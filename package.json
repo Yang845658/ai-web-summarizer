@@ -1,0 +1,28 @@
+{
+  "name": "ai-web-summarizer",
+  "version": "1.0.0",
+  "description": "AI-powered web page summarizer browser extension using Gemini API",
+  "main": "src/background.js",
+  "scripts": {
+    "dev": "echo 'Open the extension in your browser for development'",
+    "build": "echo 'Extension is ready to load - no build step required'",
+    "lint": "eslint src/**/*.js",
+    "test": "echo 'No tests yet'"
+  },
+  "keywords": [
+    "browser-extension",
+    "ai",
+    "summarizer",
+    "gemini",
+    "chrome-extension",
+    "firefox-addon"
+  ],
+  "author": "王阳",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

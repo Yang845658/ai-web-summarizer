@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Web Summarizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 標題區域 -->
+    <header class="header">
+      <h1>📄 AI 網頁摘要</h1>
+      <p class="subtitle">使用 Gemini AI 智能摘要</p>
+    </header>
+
+    <!-- API Key 輸入區域 -->
+    <section id="apiKeySection" class="section">
+      <div class="input-group">
+        <label for="apiKeyInput">Gemini API Key</label>
+        <input 
+          type="password" 
+          id="apiKeyInput" 
+          placeholder="輸入您的 API Key"
+          autocomplete="off"
+        >
+        <button id="saveApiKeyBtn" class="btn btn-primary">保存</button>
+      </div>
+      <p class="hint">API Key 會安全存儲在本地</p>
+    </section>
+
+    <!-- 摘要控制區域 -->
+    <section id="summarySection" class="section hidden">
+      <div class="control-group">
+        <label>摘要長度</label>
+        <div class="button-group">
+          <button class="length-btn" data-length="SHORT">簡短</button>
+          <button class="length-btn active" data-length="MEDIUM">中等</button>
+          <button class="length-btn" data-length="LONG">詳細</button>
+        </div>
+      </div>
+
+      <button id="summarizeBtn" class="btn btn-primary btn-large">
+        <span class="btn-icon">✨</span>
+        生成摘要
+      </button>
+    </section>
+
+    <!-- 加載狀態 -->
+    <section id="loadingSection" class="section hidden">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">正在分析網頁內容...</p>
+    </section>
+
+    <!-- 摘要結果區域 -->
+    <section id="resultSection" class="section hidden">
+      <div class="result-header">
+        <h2>摘要結果</h2>
+        <button id="copyBtn" class="btn btn-small" title="複製摘要">📋</button>
+      </div>
+      <div id="summaryContent" class="summary-content"></div>
+      <div class="result-actions">
+        <button id="regenerateBtn" class="btn btn-secondary">重新生成</button>
+      </div>
+    </section>
+
+    <!-- 錯誤信息區域 -->
+    <section id="errorSection" class="section hidden">
+      <div class="error-message">
+        <span class="error-icon">⚠️</span>
+        <span id="errorText"></span>
+      </div>
+      <button id="retryBtn" class="btn btn-secondary">重試</button>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+      <p>v1.0.0 | Powered by Gemini AI</p>
+    </footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
